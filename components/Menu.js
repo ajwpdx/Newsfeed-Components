@@ -11,6 +11,24 @@ let menuItems = [
 
 console.log('hello')
 
+function menuMaker(array){
+  const menu = document.createElement('div')
+  const menuList = document.createElement('ul')
+  
+
+  menu.className = 'menu' 
+
+  for (let i = 0; i < array.length; i++){
+    let item = document.createElement('li')
+    menuList.appendChild(item)
+    console.log(i)
+  }
+
+ return menu
+}
+
+menuMaker(menuItems)
+
 /* 
   Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
 
