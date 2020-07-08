@@ -85,7 +85,17 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'This is an Article all about how...',
+    date: 'Jan 1st, 2020',
+    firstParagraph: `My life got flip upside down.`,
+
+    secondParagraph: `The best words go here `,
+
+    thirdParagraph: `More words for this article`
   }
+
 ];
 
 const articleSection = document.querySelector('.articles')
@@ -101,7 +111,7 @@ function articleMaker(articleDataObj){
   const expandButton = document.createElement('span')
 
   //assigning classes
-  article.className = 'article article-open'
+  article.className = 'article'
   articleDate.className = 'date'
   expandButton.className = 'expandButton'
 
@@ -115,7 +125,7 @@ function articleMaker(articleDataObj){
 
   //creating expand button functionality
   expandButton.addEventListener('click', () => {
-    article.classlist.toggle('article-open')
+    article.classList.toggle('article-open')
   }) 
 
   //creating content
@@ -124,9 +134,11 @@ function articleMaker(articleDataObj){
   paragraph1.textContent = articleDataObj.firstParagraph
   paragraph2.textContent = articleDataObj.secondParagraph
   paragraph3.textContent = articleDataObj.thirdParagraph
+  expandButton.textContent = '+'
+  
   //test
   console.log('this works')
-
+  console.log(article)
   return article
 }
 
