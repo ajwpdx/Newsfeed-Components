@@ -9,6 +9,8 @@ let menuItems = [
   'Log Out'
 ];
 
+console.log('hello')
+
 /* 
   Step 1: Write a component called 'menuMaker' to create a menu like the markup below:
 

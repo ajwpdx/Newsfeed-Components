@@ -88,6 +88,23 @@ const data = [
   }
 ];
 
+function articleMaker(){
+  //element creation
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p')
+  const paragraph1 = document.createElement('p')
+  const paragraph2 = document.createElement('p')
+  const paragraph3 = document.createElement('p')
+  const expandButton = document.createElement('span')
+
+  //assigning classes
+  article.className = 'article'
+  articleDate.className = 'date'
+  expandButton.className = 'expandButton'
+
+}
+
 /* Step 1: Write a component called 'articleMaker' to create an article. You want your component to return markup like the template below: 
 
   <div class="article">
