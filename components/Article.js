@@ -88,10 +88,12 @@ const data = [
   }
 ];
 
-function articleMaker(){
+const articleSection = document.querySelector('.articles')
+
+function articleMaker(articleDataObj){
   //element creation
-  const article = document.createElement('div');
-  const articleTitle = document.createElement('h2');
+  const article = document.createElement('div')
+  const articleTitle = document.createElement('h2')
   const articleDate = document.createElement('p')
   const paragraph1 = document.createElement('p')
   const paragraph2 = document.createElement('p')
@@ -99,11 +101,40 @@ function articleMaker(){
   const expandButton = document.createElement('span')
 
   //assigning classes
-  article.className = 'article'
+  article.className = 'article article-open'
   articleDate.className = 'date'
   expandButton.className = 'expandButton'
 
+  //structuring of elements
+  article.appendChild(articleTitle)
+  article.appendChild(articleDate)
+  article.appendChild(paragraph1)
+  article.appendChild(paragraph2)
+  article.appendChild(paragraph3)
+  article.appendChild(expandButton)
+
+  //creating expand button functionality
+  expandButton.addEventListener('click', () => {
+    article.classlist.toggle('article-open')
+  }) 
+
+  //creating content
+  articleTitle.textContent = articleDataObj.title
+  articleDate.textContent = articleDataObj.name
+  paragraph1.textContent = articleDataObj.firstParagraph
+  paragraph2.textContent = articleDataObj.secondParagraph
+  paragraph3.textContent = articleDataObj.thirdParagraph
+  //test
+  console.log('this works')
+
+  return article
 }
+
+data.forEach(obj => {
+  articleSection.appendChild(articleMaker(obj))
+} 
+
+)
 
 /* Step 1: Write a component called 'articleMaker' to create an article. You want your component to return markup like the template below: 
 
