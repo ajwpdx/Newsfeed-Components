@@ -136,9 +136,7 @@ function articleMaker(articleDataObj){
   paragraph3.textContent = articleDataObj.thirdParagraph
   expandButton.textContent = '+'
   
-  //test
-  console.log('this works')
-  console.log(article)
+  //return
   return article
 }
 
